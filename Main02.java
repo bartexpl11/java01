@@ -48,9 +48,19 @@ public class Main {
         System.out.printf("Podaj druga liczbe: ");
         Double liczba2= sc.nextDouble();
         System.out.println("Suma: "+(liczba1+liczba2));
-        System.out.println("Suma: "+(liczba1+liczba2));
-        System.out.println("Suma: "+(liczba1+liczba2));
-        System.out.println("Suma: "+(liczba1+liczba2));
+        System.out.println("Różnica: "+(liczba1-liczba2));
+        System.out.println("iloczyn: "+(liczba1*liczba2));
+        System.out.println("Iloraz: "+(liczba1/liczba2));
+
+        System.out.printf("Podaj liczbe: ");
+        Double liczbax= sc.nextDouble();
+        System.out.println(liczbax+140);
+        System.out.println(liczbax-31);
+        System.out.println(liczbax*7);
+        System.out.println(liczbax/13);
+        System.out.println(liczbax%7);
+        
+
 
     }
 }
