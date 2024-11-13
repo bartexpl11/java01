@@ -22,8 +22,8 @@ public class Main {
                     matrix[i][j]= 0;
                 }
                 else{
-                matrix[i][j]= tab[count];
-                count++;
+                    matrix[i][j]= tab[count];
+                    count++;
                 }
             }
         }
@@ -115,12 +115,128 @@ public class Main {
         }
         System.out.println("Suma Ujemnych: "+sum);
     }
+    public static void sumaOdwrotnosci(int[] tab){
+        double sum=0;
+        double[] arr= new double[tab.length];
+        for(int i=0; i<tab.length;i++){
+            arr[i]=tab[i];
+        }
+        for(int i=0; i<tab.length;i++){
+            if(tab[i]!=0) {
+                sum = sum + 1/arr[i];
+            }
+        }
+        System.out.println("Suma Odwrotnosci: "+sum);
+    }
+    public static void sredniaArytmetyczna(int[] tab){
+        double avg=0;
+        for(int i=0; i<tab.length;i++){
+            avg=avg=tab[i];
+        }
+        avg=avg/tab.length;
+        System.out.println("Srednia Arytmetyczna: "+avg);
 
+    }
+    public static void sredniaGeometryczna(int[] tab){
+        double avg=1;
+        double count=0;
+        for(int i=0; i<tab.length;i++){
+            if(tab[i]>0){
+                avg=avg*tab[i];
+                count++;
+            }
+
+        }
+        avg=Math.pow(avg,1/count);
+        System.out.println("Srednia Geometryczna: "+avg);
+    }
+    public static void sredniaHarmoniczna(int[] tab){
+        double avg=0;
+        double count=0;
+        double[] arr= new double[tab.length];
+        for(int i=0; i<tab.length;i++){
+            arr[i]=tab[i];
+        }
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]>0){
+                avg=avg+1/arr[i];
+                count++;
+            }
+        }
+        avg=arr.length/avg;
+        System.out.println("Srednia Harmoniczna: "+avg);
+    }
+    public static void najdluzszyCiagDodatnich(int[] tab){
+        int count=0;
+        int temp=0;
+        for(int i=0; i<tab.length;i++){
+            if(tab[i]>0) {
+                temp++;
+            }
+            else{
+                if(temp>count){
+                    count=temp;
+                }
+                temp=0;
+            }
+            if(temp>count){
+                count=temp;
+            }
+        }
+        System.out.println("NajdluzszyCiagDodatnich: "+count);
+    }
+    public static void najdluzszyUjemnych(int[] tab){
+        int count=0;
+        int temp=0;
+        for(int i=0; i<tab.length;i++){
+            if(tab[i]<0) {
+                temp++;
+            }
+            else{
+                if(temp>count){
+                    count=temp;
+                }
+                temp=0;
+            }
+            if(temp>count){
+                count=temp;
+            }
+        }
+        System.out.println("NajdluzszyCiagUjemnych: "+count);
+    }
+    public static void odwrocTablice(int[] tab){
+        int[] arr= new int[tab.length];
+        int count=0;
+        for(int i=tab.length-1; i>=0;i--){
+            arr[count]=tab[i];
+            count++;
+        }
+        System.out.println(Arrays.toString(tab));
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void odwrocTablice2(int[] tab, int indeksStart, int indeksStop){
+        int[] arr= new int[tab.length];
+        int count=0;
+        for(int i=0; i<indeksStart;i++){
+            arr[count]=tab[i];
+            count++;
+        }
+        for(int i=indeksStop; i>=indeksStart;i--){
+            arr[count]=tab[i];
+            count++;
+        }
+        for(int i=indeksStop+1; i<tab.length;i++){
+            arr[count]=tab[i];
+            count++;
+        }
+        System.out.println(Arrays.toString(tab));
+        System.out.println(Arrays.toString(arr));
+    }
 
     public static void main(String[] args) {
 
         System.out.println("zad 1: ");
-        generujTablice(10,5,16);
+        generujTablice(20,-5,5);
         System.out.println("\nzad 2: ");
         int[] tab2={1,2,3,4,5,6,7,8,9,10,11,12};
         wypiszTablice(tab2,4,5);
@@ -137,5 +253,18 @@ public class Main {
         System.out.println("\nzad 4: ");
         sumaDodatnich(tab3);
         sumaUjemnych(tab3);
+        sumaOdwrotnosci(tab3);
+        sredniaArytmetyczna(tab3);
+        sredniaGeometryczna(tab3);
+        sredniaHarmoniczna(tab3);
+        System.out.println("\nzad 5: ");
+        System.out.println("\nzad 6: ");
+        int[] tab6 = generujTablice(20,-5,5);
+        najdluzszyCiagDodatnich(tab6);
+        najdluzszyUjemnych(tab6);
+        System.out.println("c): ");
+        odwrocTablice(tab6);
+        System.out.println("d): ");
+        odwrocTablice2(tab6,5,15);
     }
 }
