@@ -232,6 +232,19 @@ public class Main {
         System.out.println(Arrays.toString(tab));
         System.out.println(Arrays.toString(arr));
     }
+    public static void wygenerujZakres(int n, int minWartosc, int maxWartosc){
+        double[] tab= new double[n];
+        double podzial = maxWartosc-minWartosc;
+        podzial=podzial/(n-1);
+        tab[0]=minWartosc;
+        for(int i=1; i<n-1; i++){
+          tab[i]=tab[i-1]+podzial;
+        }
+        tab[n-1]=maxWartosc;
+        for(int i=0; i<n; i++){
+            System.out.print(tab[i]+" ");
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -266,5 +279,7 @@ public class Main {
         odwrocTablice(tab6);
         System.out.println("d): ");
         odwrocTablice2(tab6,5,15);
+        System.out.println("\nzad 7: ");
+        wygenerujZakres(10,1,10);
     }
 }
