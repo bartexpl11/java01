@@ -247,6 +247,39 @@ public class Main {
             System.out.printf("[%d],", arr[i]);
         }
     }
+    public static void podzbiory(int[] tab) {
+        int a = tab.length;
+        int b = 1 << a;
+        int[][] podzbiory = new int[b][a];
+
+        for (int i = 0; i < b; i++) {
+            for (int j = 0; j < a; j++) {
+                podzbiory[i][j] = 0;
+            }
+        }
+
+        for (int i = 0; i < b; i++) {
+            int c = 0;
+            for (int j = 0; j < a; j++) {
+                if ((i & (1 << j)) != 0) {
+                    podzbiory[i][c++] = tab[j];
+                }
+            }
+        }
+
+        for (int[] p : podzbiory) {
+            System.out.print("[");
+            boolean g = true;
+            for (int i = 0; i < p.length; i++) {
+                if (p[i] != 0) {
+                    if (!g) System.out.print(", ");
+                    System.out.print(p[i]);
+                    g = false;
+                }
+            }
+            System.out.println("]");
+        }
+    }
 
     public static void main(String[] args) {
     System.out.println("\nzad 1:");
