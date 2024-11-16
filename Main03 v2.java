@@ -230,6 +230,23 @@ public class Main {
         }
         return a;
     }
+    public static int[] wczytajTablice(int n) {
+        int[] res = new int[n];
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            System.out.printf("%d: ", i + 1);
+            res[i] = scanner.nextInt();
+        }
+
+        return res;
+    }
+
+    public static void podzbiory(int[] arr) {
+//        [1, 2, 3] => [1] [1 2] [1 3] [2] [2 1] [2 3] [3]
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("[%d],", arr[i]);
+        }
+    }
 
     public static void main(String[] args) {
     System.out.println("\nzad 1:");
