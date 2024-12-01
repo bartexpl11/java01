@@ -115,3 +115,161 @@ public class Main {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Produkt{
+    static String nazwa;
+    static String cena;
+    static int iloscNaMagazynie;
+
+    public Produkt(String nazwa, String cena, int iloscNaMagazynie){
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
+    public void wyswietlInformacje(){
+        System.out.println("Nazwa: " + this.nazwa+"\nCena: "+this.cena+"\nilosc na magazynie: "+this.iloscNaMagazynie);
+
+    }
+    public int dodajDoMagazynu(int ilosc){
+        this.iloscNaMagazynie += ilosc;
+        return this.iloscNaMagazynie;
+    }
+    public int usunDoMagazynu(int ilosc){
+        if(iloscNaMagazynie >= ilosc){
+            this.iloscNaMagazynie -= ilosc;
+            return this.iloscNaMagazynie;
+        }
+        else{
+            throw new IllegalArgumentException("Nie ma takiej ilosci produktu na stanie!");
+        }
+
+    }
+}
+
+
+
+class Produkt{
+    static String nazwa;
+    static String cena;
+    static int iloscNaMagazynie;
+
+    public Produkt(String nazwa, String cena, int iloscNaMagazynie){
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
+    public void wyswietlInformacje(){
+        System.out.println("Nazwa: " + this.nazwa+"\nCena: "+this.cena+"\nilosc na magazynie: "+this.iloscNaMagazynie);
+
+    }
+    public int dodajDoMagazynu(int ilosc){
+        this.iloscNaMagazynie += ilosc;
+        return this.iloscNaMagazynie;
+    }
+    public int usunDoMagazynu(int ilosc){
+        if(iloscNaMagazynie >= ilosc){
+            this.iloscNaMagazynie -= ilosc;
+            return this.iloscNaMagazynie;
+        }
+        else{
+            throw new IllegalArgumentException("Nie ma takiej ilosci produktu na stanie!");
+        }
+
+    }
+}
+
+
+
+class Produkt{
+    static String nazwa;
+    static String cena;
+    static int iloscNaMagazynie;
+
+    public Produkt(String nazwa, String cena, int iloscNaMagazynie){
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
+    public void wyswietlInformacje(){
+        System.out.println("Nazwa: " + this.nazwa+"\nCena: "+this.cena+"\nilosc na magazynie: "+this.iloscNaMagazynie);
+
+    }
+    public int dodajDoMagazynu(int ilosc){
+        this.iloscNaMagazynie += ilosc;
+        return this.iloscNaMagazynie;
+    }
+    public int usunDoMagazynu(int ilosc){
+        if(iloscNaMagazynie >= ilosc){
+            this.iloscNaMagazynie -= ilosc;
+            return this.iloscNaMagazynie;
+        }
+        else{
+            throw new IllegalArgumentException("Nie ma takiej ilosci produktu na stanie!");
+        }
+
+    }
+}
+
+
+class Produkt{
+    static String nazwa;
+    static String cena;
+    static int iloscNaMagazynie;
+
+    public Produkt(String nazwa, String cena, int iloscNaMagazynie){
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
+    public void wyswietlInformacje(){
+        System.out.println("Nazwa: " + this.nazwa+"\nCena: "+this.cena+"\nilosc na magazynie: "+this.iloscNaMagazynie);
+
+    }
+    public int dodajDoMagazynu(int ilosc){
+        this.iloscNaMagazynie += ilosc;
+        return this.iloscNaMagazynie;
+    }
+    public int usunDoMagazynu(int ilosc){
+        if(iloscNaMagazynie >= ilosc){
+            this.iloscNaMagazynie -= ilosc;
+            return this.iloscNaMagazynie;
+        }
+        else{
+            throw new IllegalArgumentException("Nie ma takiej ilosci produktu na stanie!");
+        }
+
+    }
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Produkt drewno = new Produkt("pierwszy","15,34",1);
+        Produkt kamien = new Produkt("DRUGI","121",20);
+
+        drewno.dodajDoMagazynu(3);
+        drewno.usunDoMagazynu(1);
+        drewno.wyswietlInformacje();
+
+//        p2.dodajDoMagazynu(3);
+//        p2.usunDoMagazynu(1);
+//        p2.wyswietlInformacje();
+
+        }
+    }
+
+
+
