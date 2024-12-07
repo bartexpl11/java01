@@ -1,0 +1,55 @@
+class Produkt{
+    private String nazwa;
+    private int cena;
+    private int iloscNaMagazynie;
+    public Produkt(int iloscNaMagazynie ,int cena, String nazwa){
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
+    public void wyswietl(){
+        System.out.println("NAZWA PRODUKTU: " +this.nazwa +
+                "\nCENA: "+this.cena+
+                "\nILOSC NA MAGAZYNIE: "+this.iloscNaMagazynie+
+                "\n");
+    }
+    public int dodajDoMagazynu(int ilosc){
+        this.iloscNaMagazynie = this.iloscNaMagazynie + ilosc;
+        return this.iloscNaMagazynie;
+    }
+    public int usunZMagazynu(int ilosc){
+        if(iloscNaMagazynie-ilosc<0){
+            throw new IllegalArgumentException("Na magazynie jest nie wystarczajaca liczba produktow!");
+        }
+        else {
+            this.iloscNaMagazynie = this.iloscNaMagazynie - ilosc;
+            return this.iloscNaMagazynie;
+        }
+    }
+}
+class KoszykZakupowy{
+    private int numer;
+    public KoszykZakupowy(int numer){
+        this.numer = numer;
+    }
+    class ProduktyWKoszyku{
+        
+    }
+    
+}
+
+
+class Main{
+    public static void main(String[] args) {
+        Produkt wiadro = new Produkt(1,2,"Wiadro");
+        Produkt lyzka = new Produkt(1,2,"Lyzka");
+        wiadro.wyswietl();
+        lyzka.wyswietl();
+        lyzka.dodajDoMagazynu(5);
+        wiadro.dodajDoMagazynu(5);
+        lyzka.usunZMagazynu(2);
+        wiadro.wyswietl();
+        lyzka.wyswietl();
+
+    }
+}
